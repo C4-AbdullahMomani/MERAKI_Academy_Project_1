@@ -1,0 +1,122 @@
+/* -----div1 */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.div1 {
+  width: 100%;
+  height: 150px;
+  /* background-position: center; */
+  /* background-repeat: no-repeat repeat; */
+  /* background-size: cover; */
+  background-color: rgb(95, 159, 243);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.div12 {
+  height: 100px;
+  width: 30%;
+
+  align-self: center;
+  justify-self: center;
+}
+.div12 img {
+  width: 80%;
+  height: 100px;
+  border-radius: 30%;
+}
+/*  -----------   */
+/* div2 */
+.div2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 300px;
+  justify-content: center;
+  background-color: blue;
+}
+.div21 {
+  width: 25%;
+  height: 300px;
+  justify-self: center;
+  align-self: center;
+  background-color: rgb(95, 159, 243);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.div21 button {
+  padding: 20px 40px 20px 40px;
+  border-radius: 30%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: rgb(253, 253, 253);
+}
+.div211 {
+  align-self: center;
+  justify-self: center;
+}
+
+.div22 {
+  width: 50%;
+  height: 300px;
+  align-self: center;
+  background-color: rgb(255, 253, 253);
+}
+/* div2 */
+/* ----div3 */
+.div3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+.divh6 {
+  width: 30%;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.divh6 h6 {
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 50px;
+  gap: 10px;
+}
+.div31 {
+  width: 70%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.div311 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.div311 button {
+  padding: 5px 20px 5px 20px;
+  border-radius: 30%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: rgb(183, 182, 185);
+}
+/* ----div3 */
+button:hover {
+  font-size: 30px;
+  background-color: rgb(134, 130, 123);
+}
