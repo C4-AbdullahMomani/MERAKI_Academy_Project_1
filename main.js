@@ -2,10 +2,7 @@ let words = ["hello", "mouse", "apple"];
 // let gusesWord=[]
 // let gusesWord=[words[math.floor(math.random()*words.length)]]
 const hangImage = document.createElement("img");
-hangImage.setAttribute(
-  "src",
-  "https://image.shutterstock.com/image-vector/hangman-game-260nw-623194223.jpg"
-);
+hangImage.setAttribute("src", "./hangman.jpg");
 hangImage.setAttribute("width", "100%");
 hangImage.setAttribute("height", "300");
 hangImage.setAttribute("alt", "The Pulpit Rock");
