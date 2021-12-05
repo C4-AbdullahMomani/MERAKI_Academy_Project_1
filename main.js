@@ -1,12 +1,22 @@
-let words = ["hello", "mouse", "apple"];
-let yourWord = {
-  hello: "type of greeting",
-  mouse: "type of rodent",
-  apple: "type of fruit",
-};
+// let words = ["hello", "mouse", "apple"];
+let yourWord = [{
+  hello: "type of greeting"},
+  {mouse: "type of rodent"},
+  {apple: "type of fruit"}
+];
+localStorage.setItem('myArray', JSON.stringify(yourWord));
+let words1=localStorage.getItem('myArray');
+words1 = JSON.parse(words1);
 let gusesWord1;
-const getGuses = () => {
-  return [words[Math.floor(Math.random() * words.length)]];
+let describtion11;
+const getGuses = () => { 
+ const obb=words1[Math.floor(Math.random() * words1.length)]
+ const kk=Object.keys(obb)
+ console.log(kk)
+ 
+ describtion11=Object.values(obb)
+ console.log(describtion11)
+ return kk;
 };
 
 // let gusesWord=[words[math.floor(math.random()*words.length)]]
@@ -21,7 +31,7 @@ hangImageParent.append(hangImage);
 const startButton = document.querySelector("#bstart");
 const cb = (a) => {
   gusesWord1 = getGuses();
-  addWord.innerText = yourWord[gusesWord1];
+  addWord.innerText = describtion11[0];
   console.log(gusesWord1);
   hangImage.setAttribute("src", "./hangman img1.png");
   hangImageParent.append(hangImage);
@@ -155,12 +165,9 @@ const wordAdded = () => {
 };
 addWordButton.addEventListener("click", wordAdded);
 
-// const reset1=(d)=>{
-//   counter=5;
-//   winCounter=0;
-//   gusesWord1=getGuses()
-//   letters1.innerText.style.color="black"
-
-// }
-// playAgainButton.addEventListener("click",reset1)
+const reset1=(d)=>{
+  window.location.reload();
+  
+}
+playAgainButton.addEventListener("click",reset1)
 
