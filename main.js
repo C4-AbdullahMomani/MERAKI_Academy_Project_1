@@ -164,11 +164,3 @@ addWordButton.addEventListener("click", wordAdded);
 // }
 // playAgainButton.addEventListener("click",reset1)
 
-let x = ["1", "2", "3", "3"];
-let y = ["2", "-", "4", "e"];
-for (let i = 0; i < x.length; i++) {
-  if (x[i] === "3") {
-    y[i] = "3";
-  }
-}
-console.log(y);
