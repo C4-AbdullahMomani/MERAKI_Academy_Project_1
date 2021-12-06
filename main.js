@@ -1,4 +1,3 @@
-// let words = ["hello", "mouse", "apple"];
 let yourWord = [
   {
     hello: "type of greeting",
@@ -11,20 +10,18 @@ let yourWord = [
 localStorage.setItem("Array2", JSON.stringify(yourWord));
 let words1 = localStorage.getItem("Array2");
 words1 = JSON.parse(words1);
-// console.log(soso);
+
 let gusesWord1;
 let describtion11;
 const getGuses = () => {
   const obb = words1[Math.floor(Math.random() * words1.length)];
   const kk = Object.keys(obb);
-  console.log(kk);
 
   describtion11 = Object.values(obb);
-  console.log(describtion11);
+
   return kk;
 };
 
-// let gusesWord=[words[math.floor(math.random()*words.length)]]
 const hangImage = document.createElement("img");
 hangImage.setAttribute("src", "./hangman.png");
 hangImage.setAttribute("width", "90%");
@@ -37,25 +34,17 @@ const startButton = document.querySelector("#bstart");
 const cb = (a) => {
   gusesWord1 = getGuses();
   addWord.innerText = describtion11[0];
-  console.log(gusesWord1);
+
   hangImage.setAttribute("src", "./hangman img1.png");
   hangImageParent.append(hangImage);
-  console.log(`The ${a.target.innerText} has triggered the event`);
+
   startButton.removeEventListener("click", cb);
 };
-// const x=(e)=>{
-//   console.log(e.target.innerText)
-// }
 
 startButton.addEventListener("click", cb);
 
 // /////////////////////////////////////
 const dash = document.querySelectorAll(".divh6 h6");
-// dash[0].innerText="h"
-// dash[1].innerText="e"
-// dash[2].innerText="l"
-// dash[3].innerText="l"
-// dash[4].innerText="o"
 
 const playAgainButton = document.createElement("button");
 playAgainButton.innerText = "Play Again!";
@@ -96,24 +85,16 @@ let letters1 = [
 ];
 const letters = document.querySelectorAll(" .div3 .div31 button ");
 let gusesWord = ["h", "e", "l", "l", "o"];
-
+let cc = [];
 const result1 = (e) => {
   if (letters1.indexOf(e.target.innerText) >= 0) {
-    console.log(letters1.indexOf(e.target.innerText) + "0000");
-    console.log(gusesWord1.join(" ").split(""));
-
-    console.log(counter);
     if (gusesWord1.join(" ").split("").indexOf(e.target.innerText) >= 0) {
       for (let i = 0; i < gusesWord1.join(" ").split("").length; i++) {
         if (gusesWord1.join(" ").split("")[i] === e.target.innerText) {
-          if (i === winCounter) {
-            winCounter++;
-          }
-
           dash[i].innerText = gusesWord1.join(" ").split("")[i];
-
+          cc[i] = gusesWord1.join(" ").split("")[i];
           e.target.style.color = "green";
-          if (winCounter === 5) {
+          if (cc.join("") === gusesWord1.join("")) {
             hangImage.setAttribute("src", "./win.png");
             hangImageParent.append(hangImage);
             again.append(playAgainButton);
@@ -165,9 +146,6 @@ const input11 = document.querySelector('[name="word"]');
 const input22 = document.querySelector('[name="word2"]');
 
 const wordAdded = () => {
-  console.log(input11);
-  // yourWord.push({input11.value:input22.value})
-
   yourWord.push({
     [document.querySelector('[name="word"]').value]:
       document.querySelector('[name="word2"]').value,
