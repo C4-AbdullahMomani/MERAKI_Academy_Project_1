@@ -96,6 +96,7 @@ let letters1 = [
 ];
 const letters = document.querySelectorAll(" .div3 .div31 button ");
 let gusesWord = ["h", "e", "l", "l", "o"];
+
 const result1 = (e) => {
   if (letters1.indexOf(e.target.innerText) >= 0) {
     console.log(letters1.indexOf(e.target.innerText) + "0000");
@@ -105,7 +106,10 @@ const result1 = (e) => {
     if (gusesWord1.join(" ").split("").indexOf(e.target.innerText) >= 0) {
       for (let i = 0; i < gusesWord1.join(" ").split("").length; i++) {
         if (gusesWord1.join(" ").split("")[i] === e.target.innerText) {
-          winCounter++;
+          if (i === winCounter) {
+            winCounter++;
+          }
+
           dash[i].innerText = gusesWord1.join(" ").split("")[i];
 
           e.target.style.color = "green";

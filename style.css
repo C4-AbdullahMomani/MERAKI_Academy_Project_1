@@ -104,6 +104,10 @@
   align-self: center;
   background-color: rgb(4, 89, 185);
 }
+.div2 button:hover{
+  
+  background-color: rgb(134, 130, 123);
+}
 .div22 img {
   width: 60%;
   padding-left: 80px;
@@ -155,8 +159,8 @@
   background-color: rgb(255, 255, 255);
 }
 /* ----div3 */
-button:hover {
-  font-size: 20px;
+.div311 button:hover {
+  font-size: 30px;
   background-color: rgb(134, 130, 123);
 }
 .input1 {
