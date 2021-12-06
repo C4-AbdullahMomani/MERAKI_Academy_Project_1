@@ -1,27 +1,32 @@
 // let words = ["hello", "mouse", "apple"];
-let yourWord = [{
-  hello: "type of greeting"},
-  {mouse: "type of rodent"},
-  {apple: "type of fruit"}
+let yourWord = [
+  {
+    hello: "type of greeting",
+  },
+  { mouse: "type of rodent" },
+  { apple: "type of fruit" },
+  { tiger: "type of predators" },
+  { honda: "cars brand" },
 ];
-localStorage.setItem('myArray', JSON.stringify(yourWord));
-let words1=localStorage.getItem('myArray');
+localStorage.setItem("Array2", JSON.stringify(yourWord));
+let words1 = localStorage.getItem("Array2");
 words1 = JSON.parse(words1);
+// console.log(soso);
 let gusesWord1;
 let describtion11;
-const getGuses = () => { 
- const obb=words1[Math.floor(Math.random() * words1.length)]
- const kk=Object.keys(obb)
- console.log(kk)
- 
- describtion11=Object.values(obb)
- console.log(describtion11)
- return kk;
+const getGuses = () => {
+  const obb = words1[Math.floor(Math.random() * words1.length)];
+  const kk = Object.keys(obb);
+  console.log(kk);
+
+  describtion11 = Object.values(obb);
+  console.log(describtion11);
+  return kk;
 };
 
 // let gusesWord=[words[math.floor(math.random()*words.length)]]
 const hangImage = document.createElement("img");
-hangImage.setAttribute("src", "./hangman.jpg");
+hangImage.setAttribute("src", "./hangman.png");
 hangImage.setAttribute("width", "90%");
 hangImage.setAttribute("height", "300");
 hangImage.setAttribute("alt", "HANGMAN");
@@ -105,10 +110,7 @@ const result1 = (e) => {
 
           e.target.style.color = "green";
           if (winCounter === 5) {
-            hangImage.setAttribute(
-              "src",
-              "https://lh3.googleusercontent.com/proxy/ooGeD2YLLhzVjUi29Fz29zbbK_urdUJcDrLWl0PoaFF1o436xQ-Py7lWSNgBsrGCs6fh8lvcw2pAeylJX4qwN6l-h4K4Dq12"
-            );
+            hangImage.setAttribute("src", "./win.png");
             hangImageParent.append(hangImage);
             again.append(playAgainButton);
             letters[removeEventListener("click", result1)];
@@ -155,19 +157,24 @@ const result1 = (e) => {
 
 letters[addEventListener("click", result1)];
 
-const input11 = document.querySelector("#input11");
-const input22 = document.querySelector("#input22");
+const input11 = document.querySelector('[name="word"]');
+const input22 = document.querySelector('[name="word2"]');
 
 const wordAdded = () => {
   console.log(input11);
-  yourWord[input11.value] = input22.value;
-  words.push(input11.value);
+  // yourWord.push({input11.value:input22.value})
+
+  yourWord.push({
+    [document.querySelector('[name="word"]').value]:
+      document.querySelector('[name="word2"]').value,
+  });
+  localStorage.setItem("Array2", JSON.stringify(yourWord));
+  yourwords1 = localStorage.getItem("Array2");
+  words1 = JSON.parse(words1);
 };
 addWordButton.addEventListener("click", wordAdded);
 
-const reset1=(d)=>{
+const reset1 = (d) => {
   window.location.reload();
-  
-}
-playAgainButton.addEventListener("click",reset1)
-
+};
+playAgainButton.addEventListener("click", reset1);
